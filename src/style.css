@@ -1,0 +1,11 @@
+.visible {
+    display: flex;
+
+}
+.not-visible {
+    display: none;
+    color: red;
+}
+.dropdown-menu-item {
+    background-color: red;
+}
