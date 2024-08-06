@@ -2,22 +2,20 @@ import './style.css';
 
 let dropDownMenuItems = document.querySelectorAll('.dropdown-menu-item');
 dropDownMenuItems.forEach((item) => {
-    item.addEventListener('mouseenter', () => {
-        if (item.classList.contains('not-visible')){
-            item.classList.remove('not-visible');
-        }
-        if(!item.classList.contains('visible')){
-            item.classList.add('visible');
-        }
-    });
-    item.addEventListener(('mouseleave'), () => {
-        if (!item.classList.contains('not-visible')){
-            item.classList.add('not-visible');
-        }
-        if (item.classList.contains('visible')){
-            item.classList.remove('visible');
-        }
+    const menuLabel = item.querySelector('.menu-label');
+    const innerItems = item.querySelectorAll('.inner-dropdown-item');
 
+    menuLabel.addEventListener('mouseenter', () => {
+        innerItems.forEach((child) => {
+            child.classList.remove('not-visible');
+            child.classList.add('visible');
+        });
+    });
+
+    menuLabel.addEventListener('mouseleave', () => {
+        innerItems.forEach((child) => {
+            child.classList.remove('visible');
+            child.classList.add('not-visible');
+        });
     });
 });
-
