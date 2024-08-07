@@ -1,21 +1,23 @@
 import './style.css';
+import { createDropdown } from 'dropdown-menu-js-lite';
 
 let dropDownMenuItems = document.querySelectorAll('.dropdown-menu-item');
-dropDownMenuItems.forEach((item) => {
-    const menuLabel = item.querySelector('.menu-label');
-    const innerItems = item.querySelectorAll('.inner-dropdown-item');
+createDropdown(dropDownMenuItems);
+// dropDownMenuItems.forEach((item) => {
+//     const menuLabel = item.querySelector('.menu-label');
+//     const innerItems = item.querySelectorAll('.inner-dropdown-item');
 
-    menuLabel.addEventListener('mouseenter', () => {
-        innerItems.forEach((child) => {
-            child.classList.remove('not-visible');
-            child.classList.add('visible');
-        });
-    });
+//     menuLabel.addEventListener('mouseenter', () => {
+//         innerItems.forEach((child) => {
+//             child.classList.remove('not-visible');
+//             child.classList.add('visible');
+//         });
+//     });
 
-    menuLabel.addEventListener('mouseleave', () => {
-        innerItems.forEach((child) => {
-            child.classList.remove('visible');
-            child.classList.add('not-visible');
-        });
-    });
-});
+//     menuLabel.addEventListener('mouseleave', () => {
+//         innerItems.forEach((child) => {
+//             child.classList.remove('visible');
+//             child.classList.add('not-visible');
+//         });
+//     });
+// });
